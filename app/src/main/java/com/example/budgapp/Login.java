@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
                             }
                             else
                             {
-                                Log.d("STATE",snp.getKey() + " = " + snp.getValue());
+                                Toast.makeText(Login.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
