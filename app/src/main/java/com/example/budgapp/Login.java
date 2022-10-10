@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class Login extends AppCompatActivity {
 
     private EditText _userName;
@@ -39,22 +41,22 @@ public class Login extends AppCompatActivity {
         _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _dbReference = _firebaseDb.getReference().child("Users");
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString());
                 _dbReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for(DataSnapshot snp : snapshot.getChildren())
                         {
-                            if(_userName.getText().toString().equals(snp.getKey()) && _Password.getText().toString().equals(snp.getValue()))
+                            if(Objects.equals(snp.getKey(), "Password") && _Password.getText().toString().equals(snp.getValue()))
                             {
                                 Intent intent = new Intent(Login.this, MainActivity.class);
-                                intent.putExtra("username", snp.getKey());
+                                intent.putExtra("username", _userName.getText().toString());
                                 startActivity(intent);
                             }
                             else
                             {
-                                //Rewrite the code below
-                                Toast.makeText(Login.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
+                                //Check the username or password is wrong
+                                //Toast.makeText(Login.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

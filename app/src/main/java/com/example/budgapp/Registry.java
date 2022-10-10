@@ -35,7 +35,10 @@ public class Registry extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString());
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString()).child("Password");
                 _dbReference.setValue(_Password.getText().toString());
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString()).child("E-Mail");
+                _dbReference.setValue(_eMail.getText().toString());
             }
         });
     }
