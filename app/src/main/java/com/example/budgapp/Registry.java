@@ -2,6 +2,7 @@ package com.example.budgapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,11 +35,15 @@ public class Registry extends AppCompatActivity {
         _registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString());                     //for create a user as parent
-                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString()).child("Password");   //user's password as key
-                _dbReference.setValue(_Password.getText().toString());                                                              //user's password as value
-                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString()).child("E-Mail");     //user's e-mail as key
-                _dbReference.setValue(_eMail.getText().toString());                                                                 //user's e-mail as value
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString());
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString()).child("Password");
+                _dbReference.setValue(_Password.getText().toString());
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString()).child("E-Mail");
+                _dbReference.setValue(_eMail.getText().toString());
+
+                //Intent intent = new Intent(Registry.this, PersonalInfo.class);
+                //intent.putExtra("Username", _userName.getText().toString());
+                //startActivity(intent);
             }
         });
     }
