@@ -34,7 +34,7 @@ public class Registry extends AppCompatActivity {
         _registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _dbReference = _firebaseDb.getReference().child(_userName.getText().toString());
+                _dbReference = _firebaseDb.getReference().child("Users").child(_userName.getText().toString());
                 _dbReference.setValue(_Password.getText().toString());
             }
         });

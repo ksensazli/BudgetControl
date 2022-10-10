@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _dbReference = _firebaseDb.getReference();
+                _dbReference = _firebaseDb.getReference().child("Users");
                 _dbReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
