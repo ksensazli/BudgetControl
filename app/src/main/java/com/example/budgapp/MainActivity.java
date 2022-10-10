@@ -2,13 +2,8 @@ package com.example.budgapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String username = intent.getExtras().getString("username");
-        _userName.setText(username);
+
+        if(username.equals("BudgApp"))
+        {
+            _userName.setText("Admin");
+        }
+
+        else
+        {
+            _userName.setText(username);
+        }
+
     }
 }
