@@ -47,8 +47,6 @@ public class Login extends AppCompatActivity {
                         {
                             if(_userName.getText().toString().equals(snp.getKey()) && _Password.getText().toString().equals(snp.getValue()))
                             {
-                                Log.d("STATE", _userName.getText().toString() + " = " + _Password.getText().toString());
-                                Toast.makeText(Login.this, "Success", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(Login.this, MainActivity.class);
                                 intent.putExtra("username", snp.getKey());
                                 startActivity(intent);
