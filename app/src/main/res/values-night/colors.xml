@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow">#FFE500</color>
+    <color name="pressed_yellow">#BBA800</color>
+    <color name="highlight_yellow">#FFEF62</color>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912081630749",
+    "project_id": "budgapp-80157",
+    "storage_bucket": "budgapp-80157.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912081630749:android:3f66abe076c7197d80f8f4",
+        "android_client_info": {
+          "package_name": "com.example.budgapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912081630749-nmilf851hblf5udkihhinashfhnqb2ij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXtmYRt1HwIs0O-WFCEdZuLI4lEnslL70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912081630749-nmilf851hblf5udkihhinashfhnqb2ij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
